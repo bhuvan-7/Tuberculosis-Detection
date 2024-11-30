@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson’s Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #161b22;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 500px;
+        }
+        .upload-box {
+            border: 2px dashed #58a6ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            cursor: pointer;
+            background-color: #21262d;
+            color: #8b949e;
+        }
+        .upload-box.dragover {
+            background-color: #1a73e8;
+        }
+        button {
+            background-color: #58a6ff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #0d1117;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #00509d;
+        }
+        .error, .success {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .error {
+            color: #ff6f61;
+        }
+        .success {
+            color: #22c55e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parkinson's Detection</h1>
+        <p>Drag and drop an image file, or click to upload</p>
+        <div class="upload-box" id="upload-box">
+            Drag & Drop or Click Here
+        </div>
+        <form method="POST" enctype="multipart/form-data" id="upload-form">
+            <input type="file" id="file-input" name="file" accept=".png, .jpg, .jpeg" style="display: none;">
+            <button type="submit">Predict</button>
+        </form>
+        {% if result %}
+            <div class="success">Prediction: {{ result }}</div>
+            <img src="{{ image_path }}" alt="Uploaded Image" style="width:100%; max-width:300px;">
+        {% endif %}
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+    <script>
+        const uploadBox = document.getElementById('upload-box');
+        const fileInput = document.getElementById('file-input');
+        const form = document.getElementById('upload-form');
+
+        // Handle Drag-and-Drop
+        uploadBox.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadBox.classList.add('dragover');
+        });
+
+        uploadBox.addEventListener('dragleave', () => {
+            uploadBox.classList.remove('dragover');
+        });
+
+        uploadBox.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadBox.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files; // Link dropped file to input
+                form.submit(); // Automatically submit the form
+            }
+        });
+
+        // Handle Click for File Upload
+        uploadBox.addEventListener('click', () => fileInput.click());
+
+        // Handle File Input Change
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                form.submit(); // Automatically submit the form
+            }
+        });
+    </script>
+</body>
+</html>
