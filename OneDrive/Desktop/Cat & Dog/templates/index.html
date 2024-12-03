@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat and Dog Classifier</title>
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #121212; /* Black background */
+            color: #ffffff; /* White text */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Container for Content */
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            background-color: #1e1e1e; /* Dark grey for card */
+            border: 2px solid #e63946; /* Red border */
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 20px;
+        }
+
+        /* Title Styling */
+        h1 {
+            font-size: 2.5em;
+            color: #e63946; /* Red title */
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e63946;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Form Styling */
+        form {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #e63946; /* Red input background */
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #e63946; /* Red button */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d62828; /* Darker red on hover */
+        }
+
+        /* Styling for Uploaded Image and Prediction */
+        .prediction {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e63946; /* Red prediction text */
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 3px solid #e63946; /* Red border around the image */
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cat and Dog Classifier</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <label for="file">Upload an image:</label>
+            <input type="file" name="file" id="file" required>
+            <button type="submit">Classify</button>
+        </form>
+        <!-- Display prediction and image if available -->
+        {% if prediction %}
+            <div class="prediction">
+                Prediction: {{ prediction }}
+            </div>
+            <img src="{{ image_path }}" alt="Uploaded Image">
+        {% else %}
+            <div class="prediction" style="color: #888; font-size: 1.2em;">
+                No prediction yet. Upload an image to classify.
+            </div>
+        {% endif %}
+    </div>
+    <footer>
+        Cat and Dog Classifier App - Powered by AI
+    </footer>
+</body>
+</html>
