@@ -74,9 +74,9 @@ To run this project locally, follow these steps:
 
 5.Run the Flask application:
 
-   ```bash
-   python app.py
-   ```
+      ```bash
+      python app.py
+      ```
 
 6. Open the web app in your browser at http://127.0.0.1:5000.
 
