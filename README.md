@@ -61,22 +61,22 @@ To run this project locally, follow these steps:
 
 3. Create and activate a virtual environment:
 
-  ```bash
-  python -m venv venv
-  source venv/bin/activate  # On Windows: venv\Scripts\activate
-  ```
+     ```bash
+     python -m venv venv
+     source venv/bin/activate  # On Windows: venv\Scripts\activate
+     ```
 
 4. Install the required dependencies:
 
-  ```bash
-  pip install -r requirements.txt
-  ```
+     ```bash
+     pip install -r requirements.txt
+     ```
 
 5.Run the Flask application:
 
-```bash
-python app.py
-```
+   ```bash
+   python app.py
+   ```
 
 6. Open the web app in your browser at http://127.0.0.1:5000.
 
@@ -131,6 +131,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Acknowledgments
 Special thanks to open-source contributors and resources that made this project possible.
 This project was developed as part of learning deep learning and Flask web app deployment.
-  ```javascript
-  You can copy and save this as a `README.md` file in your repository. Let me know if you need fur
-  ```
+     ```javascript
+     You can copy and save this as a `README.md` file in your repository. Let me know if you need fur
+     ```
