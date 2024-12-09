@@ -49,28 +49,28 @@ To run this project locally, follow these steps:
 
 1. Clone this repository:
 
-   ```bash
+  ```bash
    git clone https://github.com/your-username/Tuberculosis-Detection.git
-   ```
+ ```
    
 2. Navigate to the project directory:
 
-     ```bash
+    ```bash
      cd Tuberculosis-Detection
-     ```
+   ```
 
 3. Create and activate a virtual environment:
 
-     ```bash
+   ```bash
      python -m venv venv
      source venv/bin/activate  # On Windows: venv\Scripts\activate
-     ```
+   ```
 
 4. Install the required dependencies:
 
-     ```bash
+ ```bash
      pip install -r requirements.txt
-     ```
+ ```
 
 5.Run the Flask application:
 
@@ -132,6 +132,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Acknowledgments
 Special thanks to open-source contributors and resources that made this project possible.
 This project was developed as part of learning deep learning and Flask web app deployment.
-     ```javascript
+ ```javascript
      You can copy and save this as a `README.md` file in your repository. Let me know if you need fur
-     ```
+ ```
