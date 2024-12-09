@@ -55,20 +55,20 @@ To run this project locally, follow these steps:
 2. Navigate to the project directory:
 
  ```bash
-     cd Tuberculosis-Detection
+ cd Tuberculosis-Detection
    ```
 
 3. Create and activate a virtual environment:
 
  ```bash
-     python -m venv venv
-     source venv/bin/activate  # On Windows: venv\Scripts\activate
+  python -m venv venv
+ source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 4. Install the required dependencies:
 
  ```bash
-     pip install -r requirements.txt
+  pip install -r requirements.txt
  ```
 
 5.Run the Flask application:
