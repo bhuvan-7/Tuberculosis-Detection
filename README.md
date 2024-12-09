@@ -55,9 +55,9 @@ To run this project locally, follow these steps:
    
 2. Navigate to the project directory:
 
-  ```bash
-  cd Tuberculosis-Detection
-  ```
+     ```bash
+     cd Tuberculosis-Detection
+     ```
 
 3. Create and activate a virtual environment:
 
