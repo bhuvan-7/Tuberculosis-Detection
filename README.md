@@ -17,7 +17,6 @@ This project involves building a deep learning model to detect tuberculosis (TB)
 9. [Results](#results)  
 10. [Contributing](#contributing)  
 11. [License](#license)  
-12. [Acknowledgments](#acknowledgments)  
 
 ---
 
@@ -127,11 +126,4 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
----
 
-## Acknowledgments
-Special thanks to open-source contributors and resources that made this project possible.
-This project was developed as part of learning deep learning and Flask web app deployment.
- ```javascript
-     You can copy and save this as a `README.md` file in your repository. Let me know if you need fur
- ```
